@@ -11,11 +11,16 @@
     $scope.message = "";
 
     $scope.displayMessage = function () {
-      $scope.totalNoOfDishes = countDishes($scope.dishes);
-      if (isTooMany($scope.totalNoOfDishes) == true) {
-        $scope.message="Too much!";
-      } else {
-        $scope.message="Enjoy!";
+      if ($scope.dishes != "") {
+        $scope.totalNoOfDishes = countDishes($scope.dishes);
+        if (isTooMany($scope.totalNoOfDishes) == true) {
+          $scope.message="Too much!";
+        } else {
+          $scope.message="Enjoy!";
+        }
+      }
+      else {
+        $scope.message="Please enter data first"
       }
     };
 
