@@ -1,43 +1,40 @@
 <!DOCTYPE html>
 <html ng-app='ShoppingListCheckOff'>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Assignment 2 | Shopping List</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- Add Bootstrap CSS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> <!-- Add jQuery -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- Add Bootstrap JS -->
-    <script src="angular.min.js"></script>
-    <script src="app.js"></script>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assignment 2 | Shopping List Check Off</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- Add Bootstrap CSS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> <!-- Add jQuery -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- Add Bootstrap JS -->
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
 
-    <div class="page-header">
-        <h1>ShoppingListCheckOff <small>Assignment 2</small></h1>
-    </div>
+  <div class="page-header">
+    <h1>ShoppingListCheckOff <small>Assignment 2</small></h1>
+  </div>
+  <div class="row col-md-8 col-md-offset-2">
 
-    <div class="panel panel-default col-md-4">
+    <div class="panel panel-default col-md-6">
       <div class="panel-heading">
         <h2 class="panel-title">To buy</h2>
       </div>
       <div class="panel-body" ng-controller='ToBuyController as toBuyList'>
         <ul ng-repeat="item in toBuyList.items">
           <div class="row">
-            <div class="col-md-6">
-              Buy {{ item.quantity }} {{ item.name }}
-            </div>
-            <div class="col-md-6">
-              <button class="btn btn-success" ng-click="toBuyList.checkItem($index);">Bought</button>
-            </div>
+            Buy {{ item.quantity }} {{ item.name }}
+            <button class="btn btn-success" ng-click="toBuyList.checkItem($index);" style="float: right;">Bought</button>
           </div>
-          </ul>
+        </ul>
         <div ng-if="toBuyList.isEmpty();" class="alert alert-success">
-            Everything is bought!
+          Everything is bought!
         </div>
       </div>
     </div>
 
-    <div class="panel panel-default col-md-4">
+    <div class="panel panel-default col-md-6">
       <div class="panel-heading">
         <h2 class="panel-title">Already Bought</h2>
       </div>
@@ -46,10 +43,10 @@
           Bought {{ item.quantity }}  {{ item.name }}
         </ul>
         <div ng-if="boughtItemList.isEmpty();" class="alert alert-warning">
-            Nothing bought yet!
+          Nothing bought yet!
         </div>
       </div>
-      </div>
     </div>
-  </body>
+  </div>
+</body>
 </html>
