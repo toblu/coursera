@@ -69,7 +69,7 @@
         var menuItems = response.data.menu_items;
         var foundItems = [];
         for (var i=0; i<menuItems.length; i++) {
-          if (menuItems[i].description.includes(searchTerm)) {
+          if (menuItems[i].description.includes(searchTerm.toLowerCase())) {
             foundItems.push(menuItems[i]);
           }
         }
