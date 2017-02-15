@@ -23,6 +23,7 @@
   function NarrowItDownController(MenuSearchService) {
     var found = this;
     found.items = [];
+    found.searchTerm = "";
 
     found.searchItems = function () {
       if (found.searchTerm != "") {
