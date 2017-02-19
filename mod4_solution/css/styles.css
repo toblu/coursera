@@ -1,0 +1,36 @@
+.loading-icon {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.categoryList > button {
+  width: 75%;
+}
+
+.mg-left {
+  margin-left: 1.2em;
+}
+
+.main-wrapper {
+  margin-top: 2em;
+}
+
+.container-fluid {
+  display: flex;
+}
+
+.container-fluid > div {
+  flex: 1;
+}
+
+#itemsPanel {
+  width: auto;
+  max-width: 400px;
+}
+
+#categoryList {
+  width: auto;
+  max-width: 200px;
+}

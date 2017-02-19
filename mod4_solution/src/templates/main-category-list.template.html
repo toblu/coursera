@@ -1,3 +1,11 @@
-<h2>All Categories</h2>
+<div class="container-fluid main-wrapper">
+  <div id="categoryList" class="text-center">
+    <div class="row">
+      <categories categories="categoryList.categories"></categories>
+    </div>
+  </div>
 
-<categories categories="categoryList.categories"></categories>
+  <div id="itemsInCategory" style="float: left;">
+    <ui-view></ui-view>
+  </div>
+</div>

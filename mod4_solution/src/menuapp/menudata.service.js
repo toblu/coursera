@@ -18,7 +18,6 @@
 
     service.getItemsForCategory = function (categoryShortName) {
       // Return promise with all items in category
-
       return $http({
         method: 'GET',
         url: ApiBasePath + '/menu_items.json',

@@ -7,7 +7,6 @@
   RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider']
   function RoutesConfig($stateProvider, $urlRouterProvider) {
 
-
     // Redirect to home page if no URL matches
     $urlRouterProvider.otherwise('/');
 
@@ -35,7 +34,7 @@
     .state('categories.categoryItems', {
       templateUrl: 'src/templates/category-items.template.html',
       url: '/category-items/{categoryShortName}',
-      controller: 'CategoryItemsController as categoryItems',
+      controller: "CategoryItemsController as categoryItems",
       resolve: {
         items: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
             return MenuDataService.getItemsForCategory($stateParams.categoryShortName);

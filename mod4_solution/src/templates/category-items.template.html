@@ -1,3 +1,8 @@
-<div ng-repeat item in categoryItems.items>
-{{ item.name }}
+<div class="panel panel-default" id="itemsPanel">
+  <div class="panel-heading">All items in {{ categoryItems.title }}</div>
+  <div class="panel-body mg-left">
+    <div class="row" ng-repeat="item in categoryItems.items">
+      {{ item.name }}
+    </div>
+  </div>
 </div>
