@@ -25,9 +25,13 @@
   flex: 1;
 }
 
+.row-item {
+  margin-bottom: 1em;
+}
+
 #itemsPanel {
   width: auto;
-  max-width: 400px;
+  max-width: 600px;
 }
 
 #categoryList {

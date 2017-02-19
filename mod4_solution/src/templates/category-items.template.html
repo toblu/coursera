@@ -1,8 +1,14 @@
 <div class="panel panel-default" id="itemsPanel">
   <div class="panel-heading">All items in {{ categoryItems.title }}</div>
   <div class="panel-body mg-left">
-    <div class="row" ng-repeat="item in categoryItems.items">
-      {{ item.name }}
+    <div class="row-item" ng-repeat="item in categoryItems.items">
+      <div class="row">
+        <strong>{{ item.name }}</strong>
+        <span ng-if="item.price_small!=null || item.price_large!=null"> -<span ng-if="item.price_small!=null"> ${{ item.price_small }} (S)<span ng-if="item.price_large!=null">,</span></span><span ng-if="item.price_large!=null"> ${{ item.price_large }} (L)</span></span>
+      </div>
+      <div class="row">
+        {{ item.description }}
+      </div>
     </div>
   </div>
 </div>
