@@ -1,0 +1,106 @@
+<fieldset>
+  <form class="form-horizontal" name='form' novalidate>
+    <div class="form-group" >
+      <label class="control-label col-xs-2 col-sm-2 col-md-2" for="firstName">First name</label>
+      <div ng-class="{ 'has-error': form.firstName.$invalid && form.firstName.$touched }" class="col-xs-8 col-sm-8 col-md-6">
+        <input class="form-control" type="text" name="firstName" placeholder="Enter first name"
+               ng-model="regForm.userInfo.firstName"
+               pattern="[A-Za-z]+"
+               required>
+        <small class="error"
+               ng-if="form.firstName.$error.required && form.firstName.$touched">
+               First name is required
+      </small>
+      <small class="error"
+             ng-if="(form.firstName.$invalid  && !form.firstName.$error.required)&& form.firstName.$touched">
+             Name must only contain letters between A-Z
+      </small>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label col-xs-2 col-sm-2 col-md-2" for="lastName">Last name</label>
+  <div ng-class="{ 'has-error': form.lastName.$invalid && form.lastName.$touched }" class="col-xs-8 col-sm-8 col-md-6">
+    <input class="form-control" type="text" name="lastName" placeholder="Enter last name"
+           ng-model="regForm.userInfo.lastName"
+           pattern="[A-Za-z]+"
+           required>
+  <small class="error"
+         ng-if="form.lastName.$error.required && form.lastName.$touched">
+         Last name is required
+  </small>
+  <small class="error"
+         ng-if="(form.lastName.$invalid && !form.lastName.$error.required) && form.lastName.$touched">
+         Name must only contain letters between A-Z
+  </small>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label col-xs-2 col-sm-2 col-md-2" for="email">Email address</label>
+  <div ng-class="{ 'has-error': form.email.$invalid && form.email.$touched }" class="col-xs-8 col-sm-8 col-md-6">
+    <input class="form-control" type="email" name="email" placeholder="Enter email"
+           ng-model="regForm.userInfo.email"
+           required>
+  <small class="error"
+         ng-if="form.email.$error.required && form.email.$touched">
+         Email is required
+  </small>
+  <small class="error"
+         ng-if="(form.email.$invalid && !form.email.$error.required) && form.email.$touched">
+         Must be a valid email address: handle@domain format
+  </small>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label col-xs-2 col-sm-2 col-md-2" for="phone">Phone number</label>
+  <div ng-class="{ 'has-error': form.phone.$invalid && form.phone.$touched }" class="col-xs-8 col-sm-8 col-md-6">
+    <input class="form-control" type="text" name="phone" placeholder="Phone ###-###-####"
+           ng-model="regForm.userInfo.phone"
+           pattern="(\d{3})-(\d{3})-(\d{4})"
+           required>
+    <small class="error"
+           ng-if="form.phone.$error.required && form.phone.$touched">
+           Phone number is required
+    </small>
+    <small class="error"
+           ng-if="(form.phone.$invalid && !form.phone.$error.required) && form.phone.$touched">
+           Phone must be in the format ###-###-####.
+    </small>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label col-xs-2 col-sm-2 col-md-2" for="favDish">Favorite dish</label>
+  <div ng-class="{ 'has-error': form.favDish.$invalid && form.favDish.$touched }" class="col-xs-8 col-sm-8 col-md-6">
+    <input class="form-control" type="text" name="favDish" placeholder="Enter menu number of your favorite dish"
+           ng-model="regForm.userInfo.favDish"
+           valid-menu
+           required>
+    <small class="error"
+           ng-if="form.favDish.$error.required && form.favDish.$touched">
+           Must enter your favorite dish
+    </small>
+    <small class="error"
+           ng-if="(form.favDish.$invalid && !form.favDish.$error.required) && form.favDish.$error.menu">
+           No such menu exists
+    </small>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="control-label col-xs-2 col-sm-2 col-md-2"></div>
+  <div class="col-xs-8 col-sm-8 col-md-6">
+    <button
+        ng-disabled="form.$invalid"
+        ng-click="regForm.submit()"
+        class="btn btn-primary">Submit</button>
+    <div ng-show="regForm.displayMsg" style="margin-top: 10px;">
+      {{ regForm.msg }}
+    </div>
+  </div>
+</div>
+
+</form>
+</fieldset>

@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>My Info</h1>
+
+  <div ng-show="!userInfoCtrl.signedUp">
+    Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+  </div>
+
+  <div ng-show="userInfoCtrl.signedUp">
+    <div>
+      <h3>Contact information</h3>
+      <span class="glyphicon glyphicon-user"></span> {{ userInfoCtrl.userInfo.firstName }} {{ userInfoCtrl.userInfo.lastName }}
+      <br>
+      <span class="glyphicon glyphicon-envelope"></span> {{ userInfoCtrl.userInfo.email }}
+      <br>
+      <span class="glyphicon glyphicon-phone"></span> {{ userInfoCtrl.userInfo.phone }}
+    </div>
+
+    <div>
+      <h3>Favorite Menu</h3>
+      <menu-item menu-item="userInfoCtrl.menuItem"></menu-item>
+    </div>
+  </div>
+</div>
